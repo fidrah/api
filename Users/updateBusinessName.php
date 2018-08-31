@@ -8,7 +8,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/users.php';
+include_once '../objects/user.php';
 
 // get database connection
 $database = new Database();
@@ -19,9 +19,9 @@ $client = new User($db);
 
 // get id of client to be edited
 $data = json_decode(file_get_contents("php://input"));
-echo  $client->user_id_2;
+
 // set ID property of client to be edited
-$client->user_id_2 = $data->user_id_2;
+$client->id = $data->id;
 
 // set client property values
 

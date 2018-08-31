@@ -11,7 +11,7 @@
 
 # data needs to be POSTed to the Play url as JSON.
 # (some code from http://www.lornajane.net/posts/2011/posting-json-data-with-php-curl)
-$data = array("id" => "658177");
+$data = array("id" => 25);
 $data_string = json_encode($data);
 
 

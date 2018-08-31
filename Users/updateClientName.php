@@ -25,18 +25,18 @@ $client->id = $data->id;
 
 // set client property values
 
-$client->facebook = $data->facebook;
+$client->clientName = $data->clientName;
 
 // update the client
-if($client->updateFacebook()){
+if($client->updateClientName()){
     echo '{';
-        echo '"message": "Client facebook was updated."';
+        echo '"message": "Client Name was updated."';
     echo '}';
 }
 // if unable to update the client, tell the user
 else{
     echo '{';
-        echo '"message": "Unable to update Client facebook."';
+        echo '"message": "Unable to update Client Name."';
     echo '}';
 }
 ?>

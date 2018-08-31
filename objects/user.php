@@ -436,29 +436,28 @@ function update(){
 
     return false;
 }
-// update the product
+
+/*-------------------------
+**************UPDATES
+---------------------------*/
+
+// update the Client company
 function updateCompany(){
 
     // update query
-    $query = "UPDATE
-                " . $this->table_name . "
-            SET
-                company=:company
-            WHERE
-                user_id_2 = :id";
+    $query = "UPDATE " . $this->table_name . " SET company=:company WHERE user_id_2 = :id";
 
     // prepare query statement
     $stmt = $this->conn->prepare($query);
 
     // sanitize
     $this->company=htmlspecialchars(strip_tags($this->company));
-    $this->id=htmlspecialchars(strip_tags($this->user_id_2));
+    $this->id=htmlspecialchars(strip_tags($this->id));
 
     // bind new values
     $stmt->bindParam(':company', $this->company);
-    $stmt->bindParam(':id', $this->user_id_2);
-    print_r($stmt);
-echo $this->id;
+    $stmt->bindParam(':id', $this->id);
+
     // execute the query
     if($stmt->execute()){
         return true;
@@ -467,4 +466,185 @@ echo $this->id;
     return false;
 }
 
+// update the Client City
+function updateCity(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET city=:city WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->city=htmlspecialchars(strip_tags($this->city));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':city', $this->city);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
+// update the Client Description
+function updateDescription(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET about_me=:description WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->description=htmlspecialchars(strip_tags($this->description));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':description', $this->description);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
+// update the Client Email
+function updateEmail(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET email=:email WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->email=htmlspecialchars(strip_tags($this->email));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':email', $this->email);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
+// update the Client Facebook
+function updateFacebook(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET facebook=:facebook WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->facebook=htmlspecialchars(strip_tags($this->facebook));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':facebook', $this->facebook);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
+// update the Client Fax
+function updateFax(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET fax_number=:fax WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->fax=htmlspecialchars(strip_tags($this->fax));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':fax', $this->fax);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
+// update the Client Linkedin
+function updateLinkedin(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET linkedin=:linkedin WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->linkedin=htmlspecialchars(strip_tags($this->linkedin));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':linkedin', $this->linkedin);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
+// update the Client OwnerName
+function updateClientName(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET first_name=:clientName WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->ownerName=htmlspecialchars(strip_tags($this->clientName));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':clientName', $this->clientName);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
 }

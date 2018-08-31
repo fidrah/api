@@ -9,7 +9,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
 // include database and object file
 include_once '../config/database.php';
-include_once '../objects/users.php';
+include_once '../objects/user.php';
 
 // get database connection
 $database = new Database();
@@ -20,10 +20,10 @@ $client = new User($db);
 
 // get client id
 $data = json_decode(file_get_contents("php://input"));
-print_r($data);
+
 // set client id to be deleted
 $client->id = $data->id;
-echo "hello";
+
 // delete the client
 if($client->delete()){
     echo '{';

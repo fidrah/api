@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/users.php';
+include_once '../objects/user.php';
 
 // get database connection
 $database = new Database();
@@ -20,7 +20,7 @@ $user = new User($db);
 $user->phone_number = isset($_GET['phone']) ? $_GET['phone'] : die();
 
 // read the details of product to be edited
-$stmt = $user->searchByClientBusinessName();
+$stmt = $user->searchByClientPhoneNumber();
 $num = $stmt->rowCount();
 
 
