@@ -157,7 +157,7 @@ function create(){
             public_key=:public_key";
 
     // prepare query
-    //die($this->conn->prepare($query));
+
     $stmt = $this->conn->prepare($query);
 
     // sanitize
@@ -243,12 +243,10 @@ function create(){
 
 
     // execute query
-    //die($stmt);
 
-    print_r($stmt);
 
     if($stmt->execute()){
-      /*  $filename = $this->filename;
+        $filename = $this->filename;
         $clientId = $this->user_id_2;
         $sendUrl = "";
         $sendUrl = 'http://www.site.cards/' . $filename;
@@ -281,10 +279,10 @@ function create(){
 
         //execute post
         curl_exec($chUrl);
-        /*echo $resultUrl;
-        echo '<br>';
+        //echo $resultUrl;
+        //echo '<br>';
         //close connection
-        curl_close($chUrl);*/
+        curl_close($chUrl);
 
         return true;
     }
@@ -632,7 +630,7 @@ function updateClientName(){
     $stmt = $this->conn->prepare($query);
 
     // sanitize
-    $this->ownerName=htmlspecialchars(strip_tags($this->clientName));
+    $this->clientName=htmlspecialchars(strip_tags($this->clientName));
     $this->id=htmlspecialchars(strip_tags($this->id));
 
     // bind new values
@@ -647,4 +645,135 @@ function updateClientName(){
 
     return false;
 }
+
+// update the Client Phone
+function updatePhone(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET phone_number=:phone WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->phone=htmlspecialchars(strip_tags($this->phone));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':phone', $this->phone);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
+// update the Client Street
+function updateStreet(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET address1=:street WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->street=htmlspecialchars(strip_tags($this->street));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':street', $this->street);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
+// update the Client Twitter
+function updateTwitter(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET twitter=:twitter WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->twitter=htmlspecialchars(strip_tags($this->twitter));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':twitter', $this->twitter);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
+// update the Client Website
+function updateWebsite(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET website=:website WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->website=htmlspecialchars(strip_tags($this->website));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':website', $this->website);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
+// update the Client Website
+function updateZipCode(){
+
+    // update query
+    $query = "UPDATE " . $this->table_name . " SET zip_code=:zipCode WHERE user_id_2 = :id";
+
+    // prepare query statement
+    $stmt = $this->conn->prepare($query);
+
+    // sanitize
+    $this->zipCode=htmlspecialchars(strip_tags($this->zipCode));
+    $this->id=htmlspecialchars(strip_tags($this->id));
+
+    // bind new values
+    $stmt->bindParam(':zipCode', $this->zipCode);
+    $stmt->bindParam(':id', $this->id);
+
+
+    // execute the query
+    if($stmt->execute()){
+        return true;
+    }
+
+    return false;
+}
+
 }

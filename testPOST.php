@@ -12,7 +12,7 @@
 # data needs to be POSTed to the Play url as JSON.
 # (some code from http://www.lornajane.net/posts/2011/posting-json-data-with-php-curl)
 $data = array(
-"user_id_2" => 3,
+"user_id_2" => 88888888888888,
 "first_name" => "hardif",
 "email" => "hardif@hotmail.es",
 "company" => "cadiharke",
@@ -50,8 +50,8 @@ $data = array(
 $data_string = json_encode($data);
 
 
-//$ch = curl_init('http://www.site.cards/api/users/create.php');
-$ch = curl_init('http://localhost/api/Users/create.php');
+$ch = curl_init('http://www.site.cards/api/users/create.php');
+//$ch = curl_init('http://localhost/api/Users/create.php');
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

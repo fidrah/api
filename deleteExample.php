@@ -11,11 +11,12 @@
 
 # data needs to be POSTed to the Play url as JSON.
 # (some code from http://www.lornajane.net/posts/2011/posting-json-data-with-php-curl)
-$data = array("id" => 25);
+$data = array("id" => 2147483647);
 $data_string = json_encode($data);
 
 
-$ch = curl_init('http://localhost/api/users/delete.php');
+//$ch = curl_init('http://localhost/api/users/delete.php');
+$ch = curl_init('http://www.site.cards/api/users/delete.php');
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

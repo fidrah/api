@@ -31,7 +31,7 @@ for ($count = 0; $count < $length; $count++) {
 
 // if is active or not
 $status = 2;
-//print_r($data);
+
 if ($data->active == 'Active') {
     $status = 2;
 }else{

@@ -1,10 +1,10 @@
 <?php
 
-$data = array("id" => 1, "clientName" => "vindas");
+$data = array("id" => 1, "zipCode" => "252525");
 $data_string = json_encode($data);
 
 
-$ch = curl_init('http://localhost/api/users/updateClientName.php');
+$ch = curl_init('http://localhost/api/users/updateZipCode.php');
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

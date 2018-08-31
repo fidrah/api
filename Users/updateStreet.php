@@ -25,18 +25,18 @@ $client->id = $data->id;
 
 // set client property values
 
-$client->description = $data->description;
+$client->street = $data->street;
 
 // update the client
-if($client->updateDescription()){
+if($client->updateStreet()){
     echo '{';
-        echo '"message": "Client description was updated."';
+        echo '"message": "Client Street was updated."';
     echo '}';
 }
 // if unable to update the client, tell the user
 else{
     echo '{';
-        echo '"message": "Unable to update Client description."';
+        echo '"message": "Unable to update Client Street."';
     echo '}';
 }
 ?>

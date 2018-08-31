@@ -25,18 +25,18 @@ $client->id = $data->id;
 
 // set client property values
 
-$client->description = $data->description;
+$client->twitter = $data->twitter;
 
 // update the client
-if($client->updateDescription()){
+if($client->updateTwitter()){
     echo '{';
-        echo '"message": "Client description was updated."';
+        echo '"message": "Client twitter was updated."';
     echo '}';
 }
 // if unable to update the client, tell the user
 else{
     echo '{';
-        echo '"message": "Unable to update Client description."';
+        echo '"message": "Unable to update Client twitter."';
     echo '}';
 }
 ?>
